@@ -9,11 +9,9 @@ Abstract: *We present a method enabling the scaling of NeRFs to learn a large nu
 
 ![Teaser image](assets/schema.svg)
 
-[<video width="320" height="240" controls>
-  <source src="assets/Ours-Decode-pre-Encode.mp4" type="video/mp4">
-</video>](https://github.com/AntoineSchnepf/3da-ae/assets/85931369/281a8c0b-2476-4cbb-88d2-01ae3993e18a
 
-)
+https://github.com/AntoineSchnepf/3da-ae/assets/85931369/ca32cdb4-67a8-4f98-a30a-101a637f8981
+
 
 
 ## Setup
