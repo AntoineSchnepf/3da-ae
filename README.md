@@ -8,6 +8,7 @@ Abstract: *We present a method enabling the scaling of NeRFs to learn a large nu
 
 https://github.com/AntoineSchnepf/3da-ae/assets/85931369/835a318e-5f36-4745-961f-15082fc395d4
 
+![LatentScenes](https://github.com/AntoineSchnepf/3da-ae/assets/85931369/b571f7d3-a71e-43a7-adc2-7c290a59f418)
 
 
 
