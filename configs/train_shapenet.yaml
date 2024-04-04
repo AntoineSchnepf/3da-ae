@@ -1,0 +1,55 @@
+pretrain_exp_name: gvae_pretrain_shapenet # must be different from expname
+exp_name: gvae_shapenet
+pretrain: true
+train: true
+
+# data
+n_scenes: 500
+scenes_range_start: 0
+
+eval:
+  video:
+    n_scenes: 15 #number of different scenes to vizualize
+  metrics:
+    n_scenes: 50 #number of scenes to calculte the metrics upon
+    log_scenes_independently: false
+
+latent_nerf:
+  n_local_features: 10
+
+global_latent_nerf:
+  apply: true
+  n_base: 50
+  n_global_features: 22
+
+pretrain_args:
+  n_epochs: 50
+  freeze_tinymlp_after_n_epoch : 45
+  batch_size: 512 #256 for E_frozen with cached latent on A100
+  cache_latents: 
+    batch_size: 512 # 512 on A100
+
+  eval_metrics_every_epoch: 2
+  eval_video_every_epoch: 2
+  save_every_epoch: 1
+  save_latest_only : true
+
+
+train_args:
+  n_epochs: 50
+  batch_size: 32 #32 for ED on A100
+  # encoder:
+  #   annealing_milestones: [20, 40]
+  # decoder:
+  #   annealing_milestones: [20, 40]
+  # latent_nerf:
+  #   annealing_milestones: [20, 40]
+  # global_latent_nerf:
+  #   annealing_milestones: [20, 40]
+  # base_coefs:
+  #   annealing_milestones: [20, 40]
+
+  eval_metrics_every_epoch: 1
+  eval_video_every_epoch: 1
+  save_every_epoch: 1
+  save_latest_only : false

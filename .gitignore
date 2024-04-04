@@ -1,0 +1,14 @@
+.vscode
+**__pycache__**
+**.mp4
+outputs
+fid_utils/fid_image_buffer
+**.pt
+notebooks
+**wandb**
+**.pkl
+tmp_models
+**.png
+zz_encodings_comparison
+visuals 
+**.zip
