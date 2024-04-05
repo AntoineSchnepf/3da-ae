@@ -14,6 +14,11 @@ from collections import namedtuple
 from diffusers import AutoencoderKL
 
 
+if "DATA_DIR" in os.environ.keys() : 
+    DATA_DIR = os.environ['DATA_DIR']
+else:
+    DATA_DIR = "enter/path/to/data/directory"
+
 def file_ext(name: Union[str, Path]) -> str:
     return str(name).split('.')[-1]
 
@@ -22,7 +27,6 @@ def is_image_ext(fname: Union[str, Path]) -> bool:
     return f'.{ext}' in [".png", ".jpeg"] # type: ignore
 
 def get_altitude(pose) : 
-    altitude_treshold = -0.15
     return pose[..., 11]
 
 
@@ -435,15 +439,14 @@ class DatasetBank:
     list of supported datasets:
         - shapenet_car_above
         - shapenet_car
-        - carla
     """
 
 
     shapenet_car_above = Metadata(
         name='shapenet_car_above',
         dataroot_dict={
-            'train': '/home/a.schnepf/t23d/data/shapenet_car_above/train', 
-            'test': '/home/a.schnepf/t23d/data/shapenet_car_above/test'
+            'train': os.path.join(DATA_DIR, 'cars_above_train'), 
+            'test': None
         },
         focal=1.02,
         cx=0.5, cy=0.5, 
@@ -455,8 +458,8 @@ class DatasetBank:
     shapenet_car = Metadata(
         name='shapenet_car',
         dataroot_dict={
-            'train' : "/home/a.schnepf/t23d/data/shapenet_car/train",
-            'test' : "/home/a.schnepf/t23d/data/shapenet_car/test"
+            'train' : os.path.join(DATA_DIR, 'cars_train'),
+            'test' : None
         },
         focal=1.02,
         cx=0.5, cy=0.5, 
@@ -465,18 +468,6 @@ class DatasetBank:
         elevation_range=[-math.pi/2, math.pi/2],
     )
 
-    carla = Metadata(
-        name='carla',
-        dataroot_dict={
-            'train' : "/home/a.schnepf/t23d/data/carla/train",
-            'test' : "/home/a.schnepf/t23d/data/carla/test"
-        },
-        focal=1.86,
-        cx=0.5, cy=0.5,
-        camera_distance=1.3,
-        azimuth_range=[-math.pi, math.pi],
-        elevation_range=[0, 85 / 90 * math.pi/2] 
-    )
 
     @staticmethod
     def get_metadata(dataset_name):
@@ -513,7 +504,7 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     sys.path.append("/home/a.schnepf/t23d/repo/t23d")
     os.chdir("/home/a.schnepf/t23d/repo/t23d/autoencoder")
-    from autoencoder.utils import image_grid
+    from ae.utils import image_grid
     dataset_name = "carla_train"
     dataset_name="shapenet_car_above"
 

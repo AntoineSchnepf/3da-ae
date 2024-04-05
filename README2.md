@@ -15,15 +15,54 @@ Abstract: *We present a method enabling the scaling of NeRFs to learn a large nu
 ## Setup
 In this section we detail how to prepare the dataset and the environment for training and exploiting 3Da-AE.
 
-## Requirements
+### Environment 
+Our code has been tested on:
+- Linux
+- Python 3.11.5
+- CUDA 11.8
+- `L4` and `A100` NVIDIA GPU
+
+
+We recommend using Anaconda to install the environment:
+```
+conda env create -f environment.yaml
+conda activate 3daae
+```
+
+### Dataset
+
+First, set where to save the dataset by exporting the DATA_DIR variable as an environment variables:
+
+```
+export DATA_DIR=path/for/data/directory
+```
+
+Then, download the renderings of the car category of [ShapeNet](https://shapenet.org/) (data is hosted by the authors of [Scene Representation Networks](https://www.vincentsitzmann.com/srns/)):
+
+
+```
+cd datasets/scripts
+python run_me.py 
+```
+
 
 ## Usage
+You can now train your 3D-aware autoencoder on the shapenet car dataset using the folowing command:
+```
+python train.py --config train.yaml
+```
 
 
-##
+Then, you can learn new scenes in the latent space of 3Da-AE using:
+```
+python exploit.py --config exploit.yaml
+```
+## Visualization / evaluation
+We visualize and evaluate our method using [wandb](https://wandb.ai/site). You can get quickstarted [here](https://docs.wandb.ai/quickstart).
 
 ## Citation
 
+If you find this research project useful, please consider citing our work:
 ```
 @article{schnepf2024exploring,
       title={Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes}, 

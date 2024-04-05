@@ -40,9 +40,9 @@ if __name__ == '__main__':
             relative_path = os.path.relpath(rgb_path, dataset_path)
             intrinsics_path = os.path.join(scene_folder_path, 'intrinsics.txt')
             pose_path = rgb_path.replace('rgb', 'pose').replace('png', 'txt')
-            assert os.path.isfile(rgb_path), rgb_path
-            assert os.path.isfile(intrinsics_path), intrinsics_path
-            assert os.path.isfile(pose_path), pose_path 
+            assert os.path.isfile(rgb_path)
+            assert os.path.isfile(intrinsics_path)
+            assert os.path.isfile(pose_path)
             
             with open(pose_path, 'r') as f:
                 pose = np.array([float(n) for n in f.read().split(' ')]).reshape(4, 4).tolist()

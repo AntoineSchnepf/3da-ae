@@ -1,9 +1,10 @@
-pretrain_exp_name: gvae_pretrain_shapenet # must be different from expname
-exp_name: gvae_shapenet
+pretrain_exp_name: gvae_pretrain # must be different from expname
+exp_name: gvae
 pretrain: true
 train: true
 
 # data
+dataset_name: shapenet_car_above
 n_scenes: 500
 scenes_range_start: 0
 
