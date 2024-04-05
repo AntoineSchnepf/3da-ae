@@ -13,8 +13,6 @@ Abstract: *We present a method enabling the scaling of NeRFs to learn a large nu
 ![LatentScenes](https://github.com/AntoineSchnepf/3da-ae/assets/85931369/50862207-2868-4718-955b-7c473cf12f72)
 
 
-![schema](https://github.com/AntoineSchnepf/3da-ae/assets/85931369/a240f3c8-5164-42af-a009-1d473dca4e91)
-
 
 ## Setup
 In this section we detail how to prepare the dataset and the environment for training and exploiting 3Da-AE.
