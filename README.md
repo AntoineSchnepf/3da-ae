@@ -49,7 +49,7 @@ python run_me.py
 
 
 ## Usage
-You can now train your 3D-aware autoencoder on the shapenet car dataset using the folowing command:
+You can now train your 3D-aware autoencoder on the shapenet car dataset using the following command:
 ```
 python train.py --config train.yaml
 ```
