@@ -1,5 +1,5 @@
 # Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes
-**Official paper implementation submitted to CVPR 2024 3DMV Workshop**
+**Official paper implementation accepted to CVPR 2024 3DMV Workshop**
 > Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet (* indicates equal contribution)<br>
 | [Webpage](https://3da-ae.github.io/) | [Full Paper](https://arxiv.org/abs/2403.11678) |<br>
 
