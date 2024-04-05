@@ -1,3 +1,7 @@
+todo before code release:
+- check licences
+
+
 # Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes
 **Official paper implementation accepted to CVPR 2024 3DMV Workshop**
 > Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet (* indicates equal contribution)<br>
@@ -31,7 +35,7 @@ conda activate 3daae
 
 ### Dataset
 
-First, set where to save the dataset by exporting the DATA_DIR variable as an environment variables:
+First, set where to save the dataset by exporting the DATA_DIR variable as an environment variable:
 
 ```
 export DATA_DIR=path/for/data/directory
