@@ -124,7 +124,7 @@ pretrain_args:
   wandb_note: pretraining
   n_epochs: 5
   freeze_tinymlp_after_n_epoch : 90
-  batch_size: 16
+  batch_size: 32
 
   cache_latents: 
     apply: true

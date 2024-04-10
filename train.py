@@ -5,19 +5,6 @@ import argparse
 import sys
 import pickle
 
-
-if __name__ == '__main__' : 
-    if "T23D_REPO_PATH" in os.environ.keys() :
-        REPO_PATH = os.environ["T23D_REPO_PATH"]
-    else : 
-        REPO_PATH = "/home/a.schnepf/t23d/repo/3daae"
-
-    def is_notebook():
-        return "ipykernel" in sys.modules
-    
-    sys.path.append(REPO_PATH)
-    os.chdir(REPO_PATH)
-
 from ae.utils import load_config
 from ae.window_normalizer import WindowNormalizer
 from ae.trainers import train, init_models, init_datasets
@@ -25,6 +12,8 @@ from ae.eval import Evaluator
 # ----------------------------------------------------------------------
 
 if __name__ == '__main__' :
+    REPO_PATH=os.path.dirname(os.path.realpath(__file__))
+
     # --- args parsing ---
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, default="train_default.yaml")
@@ -34,9 +23,6 @@ if __name__ == '__main__' :
 
     config = Prodict.from_dict(load_config(args.config, args.config_dir, from_default=True, default_cfg_name="train_default.yaml"))
     assert config.pretrain_exp_name != config.exp_name, "pretrain_exp_name and exp_name must be different"
-    os.system(f"rm -r {os.path.join(REPO_PATH, config.savedir, 'buffer', '*')}")
-
-
 
     # --- initialiasing data ---
     train_scenes, multi_scene_trainset, test_scenes, multi_scene_testset, pose_sampler = init_datasets(config)

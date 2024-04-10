@@ -26,9 +26,9 @@ global_latent_nerf:
 pretrain_args:
   n_epochs: 50
   freeze_tinymlp_after_n_epoch : 45
-  batch_size: 512 #256 for E_frozen with cached latent on A100
+  batch_size: 32
   cache_latents: 
-    batch_size: 512 # 512 on A100
+    batch_size: 64 #512 on A100
 
   eval_metrics_every_epoch: 2
   eval_video_every_epoch: 2

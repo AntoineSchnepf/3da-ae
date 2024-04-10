@@ -274,6 +274,3 @@ def to_dict(my_tensor) :
         f"channel_{k}" : my_tensor[..., k].item()
         for k in range(my_tensor.shape[-1])
     }
-
-def is_notebook():
-    return "ipykernel" in sys.modules

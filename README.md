@@ -1,5 +1,6 @@
 todo before code release:
 - check licences
+- discuss the editing of the envrionment.yaml file // generate a new one using a cleaner install of depandencies
 
 
 # Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes
@@ -49,11 +50,10 @@ python run_me.py
 
 
 ## Usage
-You can now train your 3D-aware autoencoder on the shapenet car dataset using the following command:
+You can now train your 3D-aware autoencoder on the shapenet car dataset:
 ```
 python train.py --config train.yaml
 ```
-
 
 Then, you can learn new scenes in the latent space of 3Da-AE using:
 ```

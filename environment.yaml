@@ -3,8 +3,8 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - _libgcc_mutex=0.1=conda_forge
-  - _openmp_mutex=4.5=2_gnu
+  #- _libgcc_mutex=0.1=conda_forge
+  #- _openmp_mutex=4.5=2_gnu
   - asttokens=2.4.0=pyhd8ed1ab_0
   - backcall=0.2.0=pyh9f0ad1d_0
   - backports=1.0=pyhd8ed1ab_3
@@ -138,9 +138,9 @@ dependencies:
       - soupsieve==2.5
       - sympy==1.11.1
       - tokenizers==0.13.3
-      - torch==2.0.1+cu118
-      - torchaudio==2.0.2+cu118
-      - torchvision==0.15.2+cu118
+      - torch==2.0.1 #+cu118
+      - torchaudio==2.0.2 #+cu118
+      - torchvision==0.15.2 #+cu118
       - tqdm==4.66.1
       - transformers==4.33.1
       - triton==2.0.0
