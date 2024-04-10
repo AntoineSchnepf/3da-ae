@@ -40,7 +40,7 @@ if __name__ == '__main__' :
 
     # Pretraining script for latent nerf
     if config.pretrain:
-        os.system(f"rm -r {os.path.join(REPO_PATH, config.savedir, 'buffer', '*')}")
+        os.system(f"rm -f -r {os.path.join(REPO_PATH, config.savedir, 'buffer', '*')}")
         train(
             config=config, 
             t_args=config.pretrain_args,

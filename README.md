@@ -20,16 +20,27 @@ In this section we detail how to prepare the dataset and the environment for tra
 
 ### Environment 
 Our code has been tested on:
-- Linux
+- Linux (Debian)
 - Python 3.11.5
+- Pytorch 2.0.1
 - CUDA 11.8
-- `L4` and `A100` NVIDIA GPU
+- `L4` and `A100` NVIDIA GPUs
 
 
-We recommend using Anaconda to install the environment:
+You can use Anaconda to create the environment:
 ```
-conda env create -f environment.yaml
+conda create --name 3daae -y python=3.11.5
 conda activate 3daae
+```
+Then, you can install pytorch with Cuda 11.8 using the following command:
+```
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118 --upgrade
+```
+_You may have to adapt the cuda version according to your hardware, we recommend using CUDA >= 11.8_
+
+To install the remaining requirements, execute:
+```
+pip install -r requirements.txt
 ```
 
 ### Dataset

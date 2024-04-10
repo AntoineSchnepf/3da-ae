@@ -35,15 +35,15 @@ if __name__ == '__main__':
         shutil.unpack_archive(zipped_dataset, DATA_DIR)
 
         print("Converting camera parameters...")
-        cmd = f"python {os.path.join(dir_path, 'preprocess_shapenet_cameras.py')} --source={os.path.join(DATA_DIR, os.path.splitext(download_name)[0])}"
+        cmd = f"python3 {os.path.join(dir_path, 'preprocess_shapenet_cameras.py')} --source={os.path.join(DATA_DIR, os.path.splitext(download_name)[0])}"
         subprocess.run([cmd], shell=True)
 
         print("Generating dataset with only views from above...")
-        cmd = f"python {os.path.join(dir_path, 'preprocess_shapenet_above.py')} --source={os.path.join(DATA_DIR, os.path.splitext(download_name)[0])}"
+        cmd = f"python3 {os.path.join(dir_path, 'preprocess_shapenet_above.py')} --source={os.path.join(DATA_DIR, os.path.splitext(download_name)[0])}"
         subprocess.run([cmd], shell=True)
 
         print("Converting camera parameters...")
-        cmd = f"python {os.path.join(dir_path, 'preprocess_shapenet_cameras.py')} --source={os.path.join(DATA_DIR, 'cars_above_train')}"
+        cmd = f"python3 {os.path.join(dir_path, 'preprocess_shapenet_cameras.py')} --source={os.path.join(DATA_DIR, 'cars_above_train')}"
         subprocess.run([cmd], shell=True)
 
 
