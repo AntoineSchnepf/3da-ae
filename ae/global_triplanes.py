@@ -5,7 +5,6 @@
     The global feature planes are computed from a weighted sum of n_base global planes.
 '''
 import torch
-from prodict import Prodict
 
 class TriplaneManager(torch.nn.Module) : 
 

@@ -1,9 +1,5 @@
 # Sliding window statistics
 import torch
-from prodict import Prodict
-import sys
-import os
-import pickle
 
 
 class MuSigmaTensor(torch.Tensor):
