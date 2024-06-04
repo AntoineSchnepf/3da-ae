@@ -1,7 +1,6 @@
 todo before code release:
 - check licences
 - generate a new one using a cleaner install of depandencies ? The current file works on gcp
-- change the eval_every varibales in the configs
 
 
 
