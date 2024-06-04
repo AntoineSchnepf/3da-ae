@@ -1,6 +1,8 @@
 todo before code release:
 - check licences
-- discuss the editing of the envrionment.yaml file // generate a new one using a cleaner install of depandencies
+- generate a new one using a cleaner install of depandencies ? The current file works on gcp
+- change the eval_every varibales in the configs
+
 
 
 # Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes
