@@ -1,9 +1,3 @@
-todo before code release:
-- check licences
-- generate a new one using a cleaner install of depandencies ? The current file works on gcp
-
-
-
 # Exploring 3D-aware Latent Spaces for Efficiently Learning Numerous Scenes
 **Official paper implementation accepted to CVPR 2024 3DMV Workshop**
 > Antoine Schnepf*, Karim Kassab*, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet (* indicates equal contribution)<br>
@@ -73,6 +67,13 @@ python exploit.py --config exploit.yaml
 ```
 ## Visualization / evaluation
 We visualize and evaluate our method using [wandb](https://wandb.ai/site). You can get quickstarted [here](https://docs.wandb.ai/quickstart).
+
+
+## A Note on License
+
+This code is open-source. We share most of it under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0).
+However, we reuse code from [EG3D](https://github.com/NVlabs/eg3d) which is released under a more restrictive [license](ae/volume_rendering/LICENSE.txt) that requires redistribution under the same license or equivalent. 
+Hence, the corresponding parts of our code ([ray_marcher.py](ae/volume_rendering/ray_marcher.py), [ray_sampler.py](ae/volume_rendering/ray_sampler.py), [renderer.py](ae/volume_rendering/renderer.py), [triplane_renderer.py](ae/triplane_renderer.py) and [camera_utils.py](ae/camera_utils.py)) are open-sourced using the [original license](https://github.com/NVlabs/eg3d/blob/main/LICENSE.txt) of these works and not Apache. 
 
 ## Citation
 
